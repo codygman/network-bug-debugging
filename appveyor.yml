@@ -2,7 +2,7 @@ clone_folder: "c:\\network-bug"
 
 install:
 - ps: |
-    choco install ghc
+    choco install ghc -pre
     cabal sandbox init
     $env:Path += ";.\.cabal-sandbox\bin"
     cabal update
