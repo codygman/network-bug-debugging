@@ -7,7 +7,7 @@ install:
     Invoke-WebRequest "https://github.com/commercialhaskell/stack/releases/download/v0.1.4.0/stack-0.1.4.0-x86_64-windows.zip" -OutFile stack.zip
     Invoke-WebRequest "https://github.com/fpco/minghc/blob/master/bin/7z.exe?raw=true" -OutFile 7z.exe
     Invoke-WebRequest "https://github.com/fpco/minghc/blob/master/bin/7z.dll?raw=true" -OutFile 7z.dll
-    7z x stack.zip
+    7z x stack.zip > nul
     move stack.exe.exe stack.exe
     $env:Path += "; $(get-location)"
 - ps: |
