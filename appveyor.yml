@@ -12,4 +12,5 @@ install:
     $env:Path += "; $(get-location)"
 - ps: |
     cd C:\\network-bug
+    stack setup
     stack build
