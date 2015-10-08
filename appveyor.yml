@@ -7,13 +7,13 @@ install:
     Invoke-WebRequest "https://github.com/commercialhaskell/stack/releases/download/v0.1.4.0/stack-0.1.4.0-x86_64-windows.zip" -OutFile stack.zip
     Invoke-WebRequest "https://github.com/fpco/minghc/blob/master/bin/7z.exe?raw=true" -OutFile 7z.exe
     Invoke-WebRequest "https://github.com/fpco/minghc/blob/master/bin/7z.dll?raw=true" -OutFile 7z.dll
-    7z x stack.zip > nul
+    7z x stack.zip > $null
     move stack.exe.exe stack.exe
     $env:Path += "; $(get-location)"
 - ps: |
     cd C:\\network-bug
     echo "setting up stack and installing ghc... could take a bit"
-    stack setup > nul
+    stack setup > $null
     stack build
 - ps: |
     $env:Path += "; C:\network-bug\.stack-work\install\i386-windows\ghc-7.10.1\7.10.1\bin"
