@@ -12,7 +12,8 @@ install:
     $env:Path += "; $(get-location)"
 - ps: |
     cd C:\\network-bug
-    stack setup
+    echo "setting up stack and installing ghc... could take a bit"
+    stack setup > nul
     stack build
 - ps: |
     $env:Path += "; C:\network-bug\.stack-work\install\i386-windows\ghc-7.10.1\7.10.1\bin"
