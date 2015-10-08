@@ -17,6 +17,7 @@ install:
 - ps: |
     $env:Path += "; C:\network-bug\.stack-work\install\i386-windows\ghc-7.10.1\7.10.1\bin"
     network-bug.exe
+    echo "" | stack exec -- runhaskell src/Main.hs
 
 test_script:
 # The ugly echo "" hack is to avoid complaints about 0 being an invalid file
