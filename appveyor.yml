@@ -14,6 +14,9 @@ install:
     cd C:\\network-bug
     stack setup
     stack build
+- ps: |
+    $env:Path += "; C:\network-bug\.stack-work\install\i386-windows\ghc-7.10.1\7.10.1\bin"
+    network-bug.exe
 
 test_script:
 # The ugly echo "" hack is to avoid complaints about 0 being an invalid file
